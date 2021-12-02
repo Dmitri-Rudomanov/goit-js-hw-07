@@ -21,9 +21,6 @@ gallery.insertAdjacentHTML("beforeend",markup)
 createImg(markup)
 
 
-gallery.addEventListener("click", pictureOnClick)
-
-
 function pictureOnClick(evt){
 evt.preventDefault()
 if(evt.target.nodeName!=="IMG"){
@@ -32,6 +29,15 @@ if(evt.target.nodeName!=="IMG"){
     const instance = basicLightbox.create(`
     <img src=${evt.target.dataset.source} width="800" height="600">
     `)
-    instance.show()
+  instance.show()
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Escape") {
+    instance.close()
+  }
+  })
+
 }
+
+
+gallery.addEventListener("click", pictureOnClick)
 
