@@ -39,9 +39,4 @@ if(evt.target.nodeName!=="IMG"){
   )
 }
 
-document.removeEventListener("keydown",(event) => {
-    if (event.code === "Escape") {
-    instance.close()
-  }
-  })
 
