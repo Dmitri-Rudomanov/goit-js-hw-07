@@ -20,6 +20,7 @@ gallery.insertAdjacentHTML("beforeend",markup)
 }
 createImg(markup)
 
+gallery.addEventListener("click", pictureOnClick)
 
 function pictureOnClick(evt){
 evt.preventDefault()
@@ -34,10 +35,13 @@ if(evt.target.nodeName!=="IMG"){
     if (event.code === "Escape") {
     instance.close()
   }
-  })
-
+  }
+  )
 }
 
-
-gallery.addEventListener("click", pictureOnClick)
+document.removeEventListener("keydown",(event) => {
+    if (event.code === "Escape") {
+    instance.close()
+  }
+  })
 
